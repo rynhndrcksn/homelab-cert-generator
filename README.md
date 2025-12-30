@@ -15,7 +15,7 @@ Tools like [Caddy](https://caddyserver.com) and [Traefik](https://traefik.io/tra
 ## Requirements
 
 - `openssl` (typically pre-installed on Linux/macOS)
-- Root/sudo access (certificates are written to `/etc/nginx/ssl/`)
+- Root/sudo access (certificates are written to `/srv/nginx/ssl/`)
 
 ## Installation
 
@@ -54,8 +54,8 @@ sudo homelab-cert-gen
 Output:
 ```
 ✓ Certificate generated successfully:
-  Key:  /etc/nginx/ssl/home.arpa.key
-  Cert: /etc/nginx/ssl/home.arpa.crt
+  Key:  /srv/nginx/ssl/home.arpa.key
+  Cert: /srv/nginx/ssl/home.arpa.crt
   Valid for 3650 days (~10 years)
 ```
 
@@ -67,8 +67,8 @@ server {
     listen 443 ssl;
     server_name service.home.arpa;
 
-    ssl_certificate     /etc/nginx/ssl/home.arpa.crt;
-    ssl_certificate_key /etc/nginx/ssl/home.arpa.key;
+    ssl_certificate     /srv/nginx/ssl/home.arpa.crt;
+    ssl_certificate_key /srv/nginx/ssl/home.arpa.key;
 
     # Recommended SSL settings
     ssl_protocols TLSv1.2 TLSv1.3;

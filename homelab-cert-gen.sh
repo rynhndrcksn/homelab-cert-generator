@@ -6,7 +6,7 @@ set -euo pipefail
 # Generates a wildcard cert for *.home.arpa with SAN entry for bare domain
 # Usage: ./generate-ssl-cert.sh
 
-readonly SSL_DIR="/etc/nginx/ssl"
+readonly SSL_DIR="/srv/nginx/ssl"
 readonly DOMAIN="home.arpa"
 readonly CERT_FILE="${SSL_DIR}/${DOMAIN}.crt"
 readonly KEY_FILE="${SSL_DIR}/${DOMAIN}.key"
